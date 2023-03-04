@@ -8,14 +8,18 @@ import turnImg from "./assets/seta_virar.png"
 
 export default function App() {
   const [showQuestion, setShowQuestion] = useState(false)
-  const [showAnswer, setShowAnswer] = useState(false)
+  const [showAnswer, setShowAnswer] = useState(true)
+  const [aanswer, setAnswer] = useState(true) 
 
   function turnToFlashCard() {
     setShowQuestion(true)
+    setShowAnswer(false)
+    
   }
 
   function turnToAnswer() {
     setShowAnswer(true)
+    setAnswer(false)
   }
 
 
@@ -29,13 +33,13 @@ export default function App() {
           <>
             <Card key={index} show={showQuestion}>
               Pergunta {index + 1}
-              <img src={play} onClick={() => turnToFlashCard(quest, index)} />
+              <img src={play} onClick={turnToFlashCard} />
             </Card>
-            <Question key={index + 1}>
+            <Question key={index + 1} show2={showAnswer}>
               <p>{quest.question}</p>
-              <img src={turnImg} />
+              <img src={turnImg} onClick={turnToAnswer}/>
             </Question>
-            <Answer key={index + 2}>
+            <Answer key={index + 2} show3={aanswer}>
               <p>{quest.answer}</p>
               <Buttons>
                 <ButRed>Não lembrei</ButRed>
@@ -60,7 +64,7 @@ const DeckStyle = styled.ul`
 display:flex;
 flex-direction:column;
 align-items:center;
-
+margin-bottom:78px;
 `
 
 const Card = styled.div`
@@ -111,6 +115,7 @@ height: 131px;
 width: 299px;
 border-radius: 5px;
 background-color:#FFFFD4;
+display:${(props)=> !(props.show2)?"":"none"};
 
 font-family: Recursive;
 font-size: 18px;
@@ -146,6 +151,8 @@ letter-spacing: 0em;
 text-align: left;
 color:#333333;
 position: relative;
+
+display:${(props)=> (props.show3)? "none":""};
 
 p {margin-top:18px;
 margin-left:15px;
