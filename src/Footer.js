@@ -1,9 +1,11 @@
 import styled from "styled-components"
 
+import cards from './Mock';
+
 export default function Footer({ meter }) {
     return (
         <FooterStyle>
-            <p>{meter}/4 CONCLUÍDOS</p>
+            <p>{meter}/{cards.length} CONCLUÍDOS</p>
         </FooterStyle>
         )
 }

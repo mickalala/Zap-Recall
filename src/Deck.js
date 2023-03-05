@@ -6,17 +6,12 @@ import styled from "styled-components"
 
 
 
-export default function Deck({showQuestion, showAnswer, turnToFlashCard, turnToAnswer, cardanswer, wrongAnswer, almostAnswer, rightAnswer, answered}) {
+export default function Deck({meter, setMeter}) {
     return (
         <DeckStyle >
             {deck.map((quest, index) => (
                 
-                <Flashcard  quest={quest} index={index} showQuestion={showQuestion}
-                 showAnswer={showAnswer}
-                turnToFlashCard={turnToFlashCard}
-                turnToAnswer={turnToAnswer} cardanswer={cardanswer} 
-                wrongAnswer={wrongAnswer} almostAnswer={almostAnswer}
-                rightAnswer={rightAnswer} answered={answered}/>
+                <Flashcard  quest={quest} index={index} meter={meter} setMeter={setMeter}/>
              
             )
             )}

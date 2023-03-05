@@ -1,8 +1,68 @@
-
+import { useState } from "react"
 import turnImg from "./assets/seta_virar.png"
 import styled from "styled-components"
 
-export default function Flashcard({quest, index, showQuestion, showAnswer, turnToFlashCard, turnToAnswer, cardanswer, wrongAnswer, almostAnswer, rightAnswer, answered}){
+import play from './assets/seta_play.png'
+import error from "./assets/icone_erro.png"
+import almost from "./assets/icone_quase.png"
+import right from "./assets/icone_certo.png"
+
+
+export default function Flashcard({quest, index, meter, setMeter}){
+
+
+    const [showQuestion, setShowQuestion] = useState(false)
+    const [showAnswer, setShowAnswer] = useState(true)
+    const [cardanswer, setAnswer] = useState(true) 
+  
+    const [answered, setAnswered]= useState(play)
+    const [turned, setTurned]= useState(false)
+    // const [meter, setMeter]= useState(0)
+  
+  
+    function turnToFlashCard() {
+      if(turned) return;
+      setShowQuestion(true)
+      setShowAnswer(false)
+      
+    }
+  
+    function turnToAnswer() {
+      setShowAnswer(true)
+      setAnswer(false)
+    }
+  
+    function wrongAnswer(){
+      console.log("errou miagatah")
+      setShowQuestion(false)
+      setAnswer(true)
+      setAnswered(error)
+      setTurned(true)
+      let contador= meter+1;
+      setMeter(contador)
+    }
+  
+    function almostAnswer(){
+      console.log("quase lá miagatah")
+      setShowQuestion(false)
+      setAnswer(true)
+      setAnswered(almost)
+      setTurned(true)
+      let contador= meter+1;
+      setMeter(contador)
+    }
+  
+    function rightAnswer(){
+      console.log("acertaste miagatah")
+      setShowQuestion(false)
+      setAnswer(true)
+      setAnswered(right)
+      setTurned(true)
+      let contador= meter+1;
+      setMeter(contador)
+    }
+    
+
 return(<>
     <Card key={index} show={showQuestion} >
         Pergunta {index + 1}
