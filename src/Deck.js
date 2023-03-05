@@ -11,7 +11,7 @@ export default function Deck({meter, setMeter}) {
         <DeckStyle >
             {deck.map((quest, index) => (
                 
-                <Flashcard  quest={quest} index={index} meter={meter} setMeter={setMeter}/>
+                <Flashcard  quest={quest} index={index} meter={meter} setMeter={setMeter} key={index+4}/>
              
             )
             )}

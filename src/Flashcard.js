@@ -17,8 +17,8 @@ export default function Flashcard({quest, index, meter, setMeter}){
   
     const [answered, setAnswered]= useState(play)
     const [turned, setTurned]= useState(false)
-    // const [meter, setMeter]= useState(0)
-  
+
+    const [answerColor, setAnswerColor]= useState("")
   
     function turnToFlashCard() {
       if(turned) return;
@@ -40,6 +40,7 @@ export default function Flashcard({quest, index, meter, setMeter}){
       setTurned(true)
       let contador= meter+1;
       setMeter(contador)
+      setAnswerColor("#FF3030")
     }
   
     function almostAnswer(){
@@ -50,6 +51,7 @@ export default function Flashcard({quest, index, meter, setMeter}){
       setTurned(true)
       let contador= meter+1;
       setMeter(contador)
+      setAnswerColor("#FF922E")
     }
   
     function rightAnswer(){
@@ -60,11 +62,12 @@ export default function Flashcard({quest, index, meter, setMeter}){
       setTurned(true)
       let contador= meter+1;
       setMeter(contador)
+      setAnswerColor("#2FBE34")
     }
     
 
 return(<>
-    <Card key={index} show={showQuestion} >
+    <Card key={index} show={showQuestion} answerColor={answerColor} turned={turned} >
         Pergunta {index + 1}
         <img src={answered} onClick={turnToFlashCard} />
     </Card>
@@ -102,8 +105,8 @@ const Card = styled.div`
   letter-spacing: 0em;
   text-align: left;
   display:${(props) => (props.show) ? "none" : ""};
-  text-decoration: line-through #FF3030;
-  color: #FF3030;
+  text-decoration: ${(props)=> (props.turned)?"line-through":""} ;
+  color: ${(props)=> (props.answerColor)};
 
 
 `
