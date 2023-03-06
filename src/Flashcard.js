@@ -42,7 +42,7 @@ export default function Flashcard({quest, index, meter, setMeter}){
       let contador= meter+1;
       setMeter(contador)
       setAnswerColor("#FF3030")
-      setDataTest("no-btn")
+      setDataTest("no-icon")
     }
   
     function almostAnswer(){
@@ -74,11 +74,11 @@ return(
 <div data-test="flashcard">
     <Card key={index} show={showQuestion} answerColor={answerColor} turned={turned} >
         <p data-test="flashcard-text">Pergunta {index + 1}</p>
-       <button data-test={dataTest}> <img src={answered} onClick={turnToFlashCard}  /></button>
+       <TransparentBut data-test={dataTest}> <img src={answered} onClick={turnToFlashCard}  /></TransparentBut>
     </Card >
     <Question key={index + 1} show2={showAnswer}>
         <p data-test="flashcard-text">{quest.question}</p>
-        <button onClick={turnToAnswer} data-test="turn-btn"><img src={turnImg}  /></button>
+        <TransparentBut onClick={turnToAnswer} data-test="turn-btn"><img src={turnImg}  /></TransparentBut>
     </Question>
     <Answer key={index + 2} show3={cardanswer}>
         <p data-test="flashcard-text">{quest.answer}</p>
@@ -200,4 +200,7 @@ const ButYellow= styled.button`
 const ButGreen= styled.button`
  background-color:  #2FBE34;
 `
-
+const TransparentBut= styled.button`
+background-color:transparent;
+border:transparent;
+`
