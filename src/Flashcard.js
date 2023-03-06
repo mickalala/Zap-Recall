@@ -8,8 +8,8 @@ import almost from "./assets/icone_quase.png"
 import right from "./assets/icone_certo.png"
 
 
-export default function Flashcard({quest, index, meter, setMeter}){
-
+export default function Flashcard({quest, index, meter, setMeter, icons, setIcons}){
+    const newIcons=[...icons]
 
     const [showQuestion, setShowQuestion] = useState(false)
     const [showAnswer, setShowAnswer] = useState(true)
@@ -43,6 +43,9 @@ export default function Flashcard({quest, index, meter, setMeter}){
       setMeter(contador)
       setAnswerColor("#FF3030")
       setDataTest("no-icon")
+      
+      newIcons.push("red")
+      setIcons(newIcons)
     }
   
     function almostAnswer(){
@@ -55,6 +58,9 @@ export default function Flashcard({quest, index, meter, setMeter}){
       setMeter(contador)
       setAnswerColor("#FF922E")
       setDataTest("partial-icon")
+
+      newIcons.push("orange")
+      setIcons(newIcons)
     }
   
     function rightAnswer(){
@@ -67,6 +73,9 @@ export default function Flashcard({quest, index, meter, setMeter}){
       setMeter(contador)
       setAnswerColor("#2FBE34")
       setDataTest("zap-icon")
+
+      newIcons.push("green")
+      setIcons(newIcons)
     }
     
 

@@ -6,12 +6,13 @@ import styled from "styled-components"
 
 
 
-export default function Deck({meter, setMeter}) {
+export default function Deck({meter, setMeter, icons, setIcons}) {
     return (
         <DeckStyle >
             {deck.map((quest, index) => (
                 
-                <Flashcard  quest={quest} index={index} meter={meter} setMeter={setMeter} key={index+4}/>
+                <Flashcard  quest={quest} index={index} meter={meter} setMeter={setMeter} 
+                key={index+4} icons={icons} setIcons={setIcons}/>
              
             )
             )}

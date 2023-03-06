@@ -15,7 +15,7 @@ export default function App() {
 
   const [meter, setMeter] = useState(0)
   const [pageCard, setPageCard] = useState(true)
-
+  const [icons, setIcons]= useState([])
 
 
   return (
@@ -26,8 +26,8 @@ export default function App() {
       </ContainerInitial>
       <ContainerPageCard pageCard={pageCard}>
         <MainTitle />
-        <Deck meter={meter} setMeter={setMeter} />
-        <Footer meter={meter} />
+        <Deck meter={meter} setMeter={setMeter} icons={icons} setIcons={setIcons} />
+        <Footer meter={meter} icons={icons} setIcons={setIcons}/>
       </ContainerPageCard>
     </>
   );
