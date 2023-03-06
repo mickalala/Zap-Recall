@@ -54,7 +54,7 @@ export default function Flashcard({quest, index, meter, setMeter}){
       let contador= meter+1;
       setMeter(contador)
       setAnswerColor("#FF922E")
-      setDataTest("partial-btn")
+      setDataTest("partial-icon")
     }
   
     function rightAnswer(){
@@ -66,7 +66,7 @@ export default function Flashcard({quest, index, meter, setMeter}){
       let contador= meter+1;
       setMeter(contador)
       setAnswerColor("#2FBE34")
-      setDataTest("zap-btn")
+      setDataTest("zap-icon")
     }
     
 
