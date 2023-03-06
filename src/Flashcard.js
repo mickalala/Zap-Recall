@@ -74,11 +74,11 @@ return(
 <div data-test="flashcard">
     <Card key={index} show={showQuestion} answerColor={answerColor} turned={turned} >
         <p data-test="flashcard-text">Pergunta {index + 1}</p>
-        <img src={answered} onClick={turnToFlashCard} data-test={dataTest} />
+       <button data-test={dataTest}> <img src={answered} onClick={turnToFlashCard}  /></button>
     </Card >
     <Question key={index + 1} show2={showAnswer}>
         <p data-test="flashcard-text">{quest.question}</p>
-        <img src={turnImg} onClick={turnToAnswer} data-test="turn-btn"/>
+        <button data-test="turn-btn"><img src={turnImg} onClick={turnToAnswer} /></button>
     </Question>
     <Answer key={index + 2} show3={cardanswer}>
         <p data-test="flashcard-text">{quest.answer}</p>
