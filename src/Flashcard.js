@@ -19,7 +19,7 @@ export default function Flashcard({quest, index, meter, setMeter}){
     const [turned, setTurned]= useState(false)
 
     const [answerColor, setAnswerColor]= useState("")
-    const [dataTest, setDataTest]= useState("turn-btn")
+    const [dataTest, setDataTest]= useState("play-btn")
   
     function turnToFlashCard() {
       if(turned) return;
@@ -78,7 +78,7 @@ return(
     </Card >
     <Question key={index + 1} show2={showAnswer}>
         <p data-test="flashcard-text">{quest.question}</p>
-        <button data-test="turn-btn"><img src={turnImg} onClick={turnToAnswer} /></button>
+        <button onClick={turnToAnswer} data-test="turn-btn"><img src={turnImg}  /></button>
     </Question>
     <Answer key={index + 2} show3={cardanswer}>
         <p data-test="flashcard-text">{quest.answer}</p>
