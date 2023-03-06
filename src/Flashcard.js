@@ -70,11 +70,12 @@ export default function Flashcard({quest, index, meter, setMeter}){
     }
     
 
-return(<>
-    <Card key={index} show={showQuestion} answerColor={answerColor} turned={turned} data-test="flashcard">
+return(
+<div data-test="flashcard">
+    <Card key={index} show={showQuestion} answerColor={answerColor} turned={turned} >
         <p data-test="flashcard-text">Pergunta {index + 1}</p>
         <img src={answered} onClick={turnToFlashCard} data-test={dataTest} />
-    </Card>
+    </Card >
     <Question key={index + 1} show2={showAnswer}>
         <p data-test="flashcard-text">{quest.question}</p>
         <img src={turnImg} onClick={turnToAnswer} data-test="turn-btn"/>
@@ -87,7 +88,8 @@ return(<>
             <ButGreen onClick={rightAnswer} data-test="zap-btn">Zap!</ButGreen>
         </Buttons>
     </Answer>
-</>)
+</div >
+ )
 }
 
 const Card = styled.div`

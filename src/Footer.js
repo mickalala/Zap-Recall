@@ -4,8 +4,8 @@ import cards from './Mock';
 
 export default function Footer({ meter }) {
     return (
-        <FooterStyle>
-            <p data-test="footer">{meter}/{cards.length} CONCLUÍDOS</p>
+        <FooterStyle data-test="footer">
+            <p >{meter}/{cards.length} CONCLUÍDOS</p>
         </FooterStyle>
         )
 }
