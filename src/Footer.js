@@ -17,14 +17,14 @@ export default function Footer({ meter, icons }) {
 
   return (
     <FooterStyle data-test="footer" end={end}>
-      <EndGame end={end}>
+      <EndGame end={end} data-test="finish-text">
 
         {(icons.includes("red")) ?
-          (<><Presult><img src={ cry} />Putz...</Presult>
-            <Ptext>Ainda faltam alguns...
-              Mas não desanime!</Ptext></>) :
-          (<><Presult><img src={party } />Parabéns!</Presult>
-            <Ptext>Você não esqueceu de nenhum flashcard!</Ptext></>)
+          (<span data-test="finish-text"><Presult data-test="finish-text"><img src={ cry} />Putz...</Presult>
+            <Ptext data-test="finish-text">Ainda faltam alguns...
+              Mas não desanime!</Ptext></span>) :
+          (<span data-test="finish-text"><Presult data-test="finish-text"><img src={party } />Parabéns!</Presult>
+            <Ptext data-test="finish-text">Você não esqueceu de nenhum flashcard!</Ptext></span>)
         }
 
       </EndGame>
