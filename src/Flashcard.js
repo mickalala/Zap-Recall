@@ -19,6 +19,7 @@ export default function Flashcard({quest, index, meter, setMeter}){
     const [turned, setTurned]= useState(false)
 
     const [answerColor, setAnswerColor]= useState("")
+    const [dataTest, setDataTest]= useState("turn-btn")
   
     function turnToFlashCard() {
       if(turned) return;
@@ -41,6 +42,7 @@ export default function Flashcard({quest, index, meter, setMeter}){
       let contador= meter+1;
       setMeter(contador)
       setAnswerColor("#FF3030")
+      setDataTest("no-btn")
     }
   
     function almostAnswer(){
@@ -52,6 +54,7 @@ export default function Flashcard({quest, index, meter, setMeter}){
       let contador= meter+1;
       setMeter(contador)
       setAnswerColor("#FF922E")
+      setDataTest("partial-btn")
     }
   
     function rightAnswer(){
@@ -63,24 +66,25 @@ export default function Flashcard({quest, index, meter, setMeter}){
       let contador= meter+1;
       setMeter(contador)
       setAnswerColor("#2FBE34")
+      setDataTest("zap-btn")
     }
     
 
 return(<>
-    <Card key={index} show={showQuestion} answerColor={answerColor} turned={turned} >
-        Pergunta {index + 1}
-        <img src={answered} onClick={turnToFlashCard} />
+    <Card key={index} show={showQuestion} answerColor={answerColor} turned={turned} data-test="flashcard">
+        <p data-test="flashcard-text">Pergunta {index + 1}</p>
+        <img src={answered} onClick={turnToFlashCard} data-test={dataTest} />
     </Card>
     <Question key={index + 1} show2={showAnswer}>
-        <p>{quest.question}</p>
-        <img src={turnImg} onClick={turnToAnswer} />
+        <p data-test="flashcard-text">{quest.question}</p>
+        <img src={turnImg} onClick={turnToAnswer} data-test="turn-btn"/>
     </Question>
     <Answer key={index + 2} show3={cardanswer}>
-        <p>{quest.answer}</p>
+        <p data-test="flashcard-text">{quest.answer}</p>
         <Buttons>
-            <ButRed onClick={wrongAnswer}>Não lembrei</ButRed>
-            <ButYellow onClick={almostAnswer}>Quase não lembrei</ButYellow>
-            <ButGreen onClick={rightAnswer}>Zap!</ButGreen>
+            <ButRed onClick={wrongAnswer} data-test="no-btn">Não lembrei</ButRed>
+            <ButYellow onClick={almostAnswer} data-test="partial-btn">Quase não lembrei</ButYellow>
+            <ButGreen onClick={rightAnswer} data-test="zap-btn">Zap!</ButGreen>
         </Buttons>
     </Answer>
 </>)
