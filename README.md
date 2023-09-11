@@ -1,3 +1,20 @@
+# Zap-Recall
+Zap-Recall is a appliance that can be used to learn in a fun way. By playng cards, the user can test his knowledge.
+The set of cards can be customized, when reponding to the card the user receive a instant feedback on their accurancy.
+
+<p align='center'>
+  Try it out:
+</p>
+
+# Technologies
+The following tools and frameworks were used in the construction of the project:
+
+<p>
+  <img style='margin: 5px;' src='https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB'>
+  <img style='margin: 5px;' src='https://img.shields.io/badge/styled-components%20-%2320232a.svg?&style=for-the-badge&color=b8679e&logo=styled-components&logoColor=%3a3a3a'>
+  <img style='margin: 5px;' src='https://img.shields.io/badge/react-icons%20-%2320232a.svg?&style=for-the-badge&color=f28dc7&logo=react-icons&logoColor=%2361DAFB'>
+  <img style='margin: 5px;' src='https://img.shields.io/badge/axios-671ddf?&style=for-the-badge&logo=axios&logoColor=white'>
+</p>
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
