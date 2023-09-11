@@ -3,7 +3,7 @@ Zap-Recall is a appliance that can be used to learn in a fun way. By playng card
 The set of cards can be customized, when reponding to the card the user receive a instant feedback on their accurancy.
 
 <p align='center'>
-  Try it out:
+  Try it out:zaprecall-beta.vercel.app
 </p>
 
 # Technologies
