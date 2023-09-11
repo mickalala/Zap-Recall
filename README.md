@@ -1,5 +1,5 @@
 # Zap-Recall
-Zap-Recall is a appliance that can be used to learn in a fun way. By playng cards, the user can test his knowledge.
+Zap-Recall is a appliance that can be used to learn in a fun way. By playing cards, the user can test his knowledge.
 The set of cards can be customized, when reponding to the card the user receive a instant feedback on their accurancy.
 
 <p align='center'>
@@ -18,6 +18,22 @@ The following tools and frameworks were used in the construction of the project:
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+
+## How to use
+1. Clone this repository
+2. Install dependencies
+```bash
+npm i
+```
+3. Run the front-end with
+```bash
+npm start
+```
+4. You can optionally build the project running
+```bash
+npm run build
+```
+5. Finally access http://localhost:3000 on your favorite browser (unless it is Internet Explorer)
 
 ## Available Scripts
 
